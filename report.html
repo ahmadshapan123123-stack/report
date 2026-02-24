@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير الأعمال الشهرية | فبراير 2026 | Ahmad Shapan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.9;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        .arabic-text {
+            font-family: 'Cairo', 'Arial', sans-serif;
+            line-height: 1.9;
+            font-size: 1.1em;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(197, 160, 89, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .status-badge {
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            color: #c5a059;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        
+        .link-button {
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+        
+        .link-button:hover {
+            background: rgba(139, 0, 0, 0.3);
+            border-color: rgba(139, 0, 0, 0.5);
+            transform: translateY(-1px);
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #c5a059 0%, #f4e4c1 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tag {
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: #c5a059;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .nav-logo {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.375rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            color: #c5a059;
+            font-weight: bold;
+            font-size: 1.125rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-name {
+            font-weight: bold;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            color: #c5a059;
+        }
+        
+        .nav-contact {
+            background: #f5f5f5;
+            color: #000;
+            font-size: 0.625rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-contact:hover {
+            background: #8b0000;
+            color: #fff;
+        }
+        
+        section {
+            padding: 5rem 1.5rem;
+        }
+        
+        .container {
+            max-width: 90rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #c5a059;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-text {
+            color: #888;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: #888;
+            font-size: 1.125rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .warning-box p {
+            color: #fbbf24;
+            font-size: 0.875rem;
+        }
+        
+        .info-box p {
+            color: #60a5fa;
+            font-size: 0.875rem;
+        }
+        
+        .system-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .system-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .timeline {
+            margin-top: 2rem;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-number {
+            background: #c5a059;
+            color: #000;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+        
+        .timeline-content h4 {
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-content p {
+            color: #888;
+            font-size: 0.875rem;
+        }
+        
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .success-box p {
+            color: #4ade80;
+        }
+        
+        footer {
+            background: #050505;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-text {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .social-links a {
+            color: #888;
+            font-size: 1.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #c5a059;
+        }
+        
+        .copyright {
+            color: #444;
+            font-size: 0.625rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+        }
+        
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .system-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .intro-text {
+                font-size: 1.125rem;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-brand">
+            <div class="nav-logo">AS</div>
+            <span class="nav-name">AHMAD SHAPAN</span>
+        </div>
+        <a href="mailto:ahmed-shaaban@puiux.org" class="nav-contact">
+            تواصل معي
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <section>
+        <div class="container">
+            <div class="animate-fade-up">
+                <span class="tag">تقرير الأعمال الشهرية</span>
+            </div>
+
+            <h1 class="animate-fade-up">
+                فبراير <span class="gold-gradient-text">2026</span>
+            </h1>
+
+            <p class="intro-text animate-fade-up">
+                نظراً لعدم دخول مشاريع جديدة إلى دائرة المشاريع فتم العمل على إضافة تحسينات إلى المشاريع الموجودة بالفعل والعمل على تنفيذ تعديلات العملاء
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section>
+        <div class="container">
+
+            <!-- Project 1: مسفر العاطفي -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>موقع مسفر العاطفي</h2>
+                    <span class="status-badge">تم التسليم</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• تنفيذ تعديلات العميلة ما قبل التسليم</li>
+                            <li>• تعديل على أجزاء معتمدة في مراحل سابقة</li>
+                            <li>• تحديث المحتوى والفرونت والباك</li>
+                            <li>• إضافة بلاجن كاشينج (Litespeed Cache)</li>
+                            <li>• تحسين أداء الموقع</li>
+                            <li>• تسليم الفيديو التعليمي للعميل</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>التسليم:</h3>
+                        <p class="arabic-text">
+                            تم تسليم الموقع للعميل بتاريخ 18 فبراير الجاري مع الفيديو التعليمي للموقع بعد رفعه على الدومين الرئيسي.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://alatifilaw.sa/" target="_blank" class="link-button">
+                                الموقع الرئيسي
+                            </a>
+                            <a href="https://beta.puiux.org/masfer/" target="_blank" class="link-button">
+                                النسخة التجريبية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: مدونة مسفر العاطفي -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>مدونة مسفر العاطفي</h2>
+                    <span class="status-badge">تم التسليم</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• إضافات ونماذج الإرسال لعرض نتائج نماذج الاتصال</li>
+                            <li>• التحكم في النماذج وإمكانية تصديرها</li>
+                            <li>• إضافة reCAPTCHA للنماذج</li>
+                            <li>• تعديلات على صفحة الأرشيف والصفحة السنجل</li>
+                            <li>• إضافة بلاجن كاشينج (Litespeed Cache)</li>
+                            <li>• ضغط الصور داخل الموقع</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>التسليم:</h3>
+                        <p class="arabic-text">
+                            تم تسليم الموقع للعميلة ورفعه على الدومين الرئيسي وتسليم الفيديو التعليمي بتاريخ 19 فبراير الجاري.
+                        </p>
+                        <div class="warning-box">
+                            <p>
+                                أرسلت تعديلات أخيرة على صفحات الأرشيف والسنجل ولكن العميل يرى أنه لا يحتاجها بالشكل الحالي.
+                            </p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://alatifi.com/" target="_blank" class="link-button">
+                                الموقع الرئيسي
+                            </a>
+                            <a href="https://beta.puiux.org/mesfer-blog/" target="_blank" class="link-button">
+                                النسخة التجريبية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: موقع فيجن -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>موقع فيجن</h2>
+                    <span class="status-badge">قيد التنفيذ</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• ضغط الصور من 10GB إلى 250MB</li>
+                            <li>• تحويل الامتداد إلى WebP لتحسين العرض</li>
+                            <li>• إضافة محتوى الأبواب المخصصة</li>
+                            <li>• إنشاء اسكربت هجرة لمسارات الصور</li>
+                            <li>• إضافات محتوى جديدة (الرحلة، الواتساب)</li>
+                            <li>• تعديلات CSS على زر الواتساب وعرض الصور</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>الحالة الحالية:</h3>
+                        <p class="arabic-text">
+                            العميل طلب إضافة صفحات مقالات أرشيف وسنجل وفي انتظار اكتمال الدفع لتنفيذ هذه الإضافات.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://beta.puiux.org/unitedVision/" target="_blank" class="link-button">
+                                النسخة التجريبية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: جمعية الدعوة -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>موقع جمعية الدعوة</h2>
+                    <span class="status-badge">تم التسليم</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• إضافات ونماذج الإرسال لعرض النتائج</li>
+                            <li>• التحكم في النماذج وإمكانية تصديرها</li>
+                            <li>• إضافة reCAPTCHA للنماذج</li>
+                            <li>• مراجعة وتطوير المحتوى المرسل</li>
+                            <li>• تسليم الفيديو التعليمي للعميل</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>التحديات والحلول:</h3>
+                        <p class="arabic-text">
+                            العميل أجرى تعديلات على المحتوى في النسخة التجريبية وخرب بعض الأجزاء (الهيدر والهيرو سكشن) وتمت إعادتها.
+                        </p>
+                        <p class="arabic-text">
+                            تم تسليم الموقع للعميل ورفعه على الدومين الخاص به بتاريخ 17 فبراير الجاري.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://sullaee.com/" target="_blank" class="link-button">
+                                الموقع الرئيسي
+                            </a>
+                            <a href="https://beta.puiux.org/Dawah-Association/" target="_blank" class="link-button">
+                                النسخة التجريبية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: منازل الرائدة -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>موقع منازل الرائدة</h2>
+                    <span class="status-badge">قيد التنفيذ</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• مراجعة ملاحظات العميل على فورم تسجيل الاهتمام</li>
+                            <li>• إعادة بناء الفورم بسبب تعارضات الإضافات</li>
+                            <li>• استلام نسخة تجريبية فرونت</li>
+                            <li>• برمجة باك إند في ساعة واحدة</li>
+                            <li>• إضافة محتوى العروض الخاص بالعميل</li>
+                            <li>• إضافة الصور بروابط داخلية</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>الحالة الحالية:</h3>
+                        <p class="arabic-text">
+                            تم تنفيذ التعديل الأول والثاني بتاريخ 23 فبراير بعد استلام الصور والوصول لقاعدة البيانات.
+                        </p>
+                        <div class="info-box">
+                            <p>
+                                التعديل الثالث الخاص بصفحة السنجل لم يتم الانتهاء منه بعد (النسخة الفرونت إند).
+                            </p>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://beta.puiux.org/manazel/" target="_blank" class="link-button">
+                                النسخة التجريبية
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: الجسر الأخضر -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>الجسر الأخضر</h2>
+                    <span class="status-badge">تم الإصلاح</span>
+                </div>
+
+                <div class="project-grid">
+                    <div>
+                        <h3>العمل المنفذ:</h3>
+                        <ul class="arabic-text">
+                            <li>• تعديل محتوى سكشن الأسئلة الشائعة</li>
+                            <li>• مراجعة آلية التحكم في المحتوى</li>
+                            <li>• إعادة تنفيذ السكشن بشكل ديناميكي</li>
+                            <li>• إتاحة عناصر التحكم في إليمنتور</li>
+                            <li>• إدخال المحتوى باللغتين العربية والإنجليزية</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>التحديات والحلول:</h3>
+                        <p class="arabic-text">
+                            تبين أن التعديل المطلوب لا يمكن التحكم فيه داخل الموقع من خلال محرر إليمنتور لأن السكشن تم تنفيذه بشكل ستاتيك.
+                        </p>
+                        <p class="arabic-text">
+                            تم إعادة تنفيذ السكشن وإتاحة التحكمات فيه ومن ثم إدخال محتوى العميل باللغتين.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://gbcest.com/" target="_blank" class="link-button">
+                                الموقع الرئيسي
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: نظام إدارة المشاريع -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h2>نظام إدارة المشاريع</h2>
+                    <span class="status-badge">تم التطوير</span>
+                </div>
+
+                <div>
+                    <h3>فكرة النظام:</h3>
+                    <p class="arabic-text">
+                        بعد ملاحظات متكررة تتعلق بحركة انتقال المشاريع، تم تطوير سيستم خاص لانتقال المشاريع بشكل سلس بين الإدارة والفريق المختص كل مرحلة بشكل منفصل.
+                    </p>
+
+                    <h3>مكونات النظام:</h3>
+                    <div class="system-grid">
+                        <div class="system-card">
+                            <h4>Project Manager</h4>
+                            <ul class="arabic-text">
+                                <li>• يعمل كـ "غرفة عمليات" للفريق</li>
+                                <li>• يدير هيكل الفريق والأدوار الوظيفية</li>
+                                <li>• يوفر لوحات متطورة لتنظيم المهام</li>
+                                <li>• مؤقت لحساب ساعات العمل بدقة</li>
+                                <li>• تقسيم المشروع إلى مراحل (Phases)</li>
+                            </ul>
+                        </div>
+                        <div class="system-card">
+                            <h4>نظام Feedback</h4>
+                            <ul class="arabic-text">
+                                <li>• بوابة الفيدباك للعملاء</li>
+                                <li>• وضع ملاحظات العميل مباشرة</li>
+                                <li>• عرض الملاحظات فوراً للفريق</li>
+                                <li>• التكامل مع لوحة تحكم الفريق</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>الرحلة الكاملة للنظام:</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-number">1</div>
+                            <div class="timeline-content">
+                                <h4>الإنشاء</h4>
+                                <p>إنشاء المشروع بكامل بياناته ومستندات العمل ورابط التذاكر</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">2</div>
+                            <div class="timeline-content">
+                                <h4>الإسناد</h4>
+                                <p>إسناد المشروع للفريق المختص وتحديد مدة زمنية للتسليم</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">3</div>
+                            <div class="timeline-content">
+                                <h4>التنفيذ</h4>
+                                <p>قيام الفريق بمهامه وتسجيل الوقت وتسليم المشروع</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-number">4</div>
+                            <div class="timeline-content">
+                                <h4>المراجعة</h4>
+                                <p>مراجعة الإدارة واتخاذ قرار: إتاحة الفيدباك، الانتقال، أو الرفض</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="success-box">
+                        <p>
+                            السيستم تم الانتهاء من تنفيذه ك باك إند متبقي تنفيذ الواجهة الأمامية ولكن المشروع لا يزال لوكل.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="footer-title">شكراً للقراءة</h2>
+            <p class="footer-text">
+                تقرير شهري يوضح التقدم والإنجازات في مشاريع العملاء الحالية
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ahmad-el-kashif-4858933b0/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/201021855103" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="copyright">
+                2026 AHMAD SHAPAN • تقرير الأعمال الشهرية
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
