@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقرير شهر مارس 2026 | Ahmad Shapan</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.9;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        .arabic-text {
+            font-family: 'Cairo', 'Arial', sans-serif;
+            line-height: 1.9;
+            font-size: 1.1em;
+        }
+        
+        .report-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .report-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(197, 160, 89, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .employee-badge {
+            background: rgba(139, 0, 0, 0.2);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            color: #c5a059;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+        
+        .project-link {
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+        
+        .project-link:hover {
+            background: rgba(139, 0, 0, 0.3);
+            border-color: rgba(139, 0, 0, 0.5);
+            transform: translateY(-1px);
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #c5a059 0%, #f4e4c1 50%, #c5a059 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tag {
+            background: rgba(197, 160, 89, 0.2);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            color: #c5a059;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .animate-fade-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .nav-logo {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 0.375rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            color: #c5a059;
+            font-weight: bold;
+            font-size: 1.125rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .nav-name {
+            font-weight: bold;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            color: #c5a059;
+        }
+        
+        .nav-contact {
+            background: #f5f5f5;
+            color: #000;
+            font-size: 0.625rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-contact:hover {
+            background: #8b0000;
+            color: #fff;
+        }
+        
+        section {
+            padding: 5rem 1.5rem;
+        }
+        
+        .container {
+            max-width: 90rem;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #c5a059;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+        
+        .intro-text {
+            color: #888;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 64rem;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .task-list {
+            list-style: none;
+        }
+        
+        .task-item {
+            margin-bottom: 1rem;
+            color: #888;
+            font-size: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0.5rem;
+            border-left: 3px solid #c5a059;
+        }
+        
+        .task-title {
+            color: #c5a059;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .task-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .day-section {
+            margin-bottom: 2rem;
+        }
+        
+        .day-title {
+            background: rgba(197, 160, 89, 0.1);
+            color: #c5a059;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        footer {
+            background: #050505;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: -0.05em;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-text {
+            color: #888;
+            margin-bottom: 2rem;
+            font-size: 1.125rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .social-links a {
+            color: #888;
+            font-size: 1.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #c5a059;
+        }
+        
+        .copyright {
+            color: #444;
+            font-size: 0.625rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .intro-text {
+                font-size: 1.125rem;
+            }
+            
+            nav {
+                padding: 1rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .report-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-brand">
+            <div class="nav-logo">AS</div>
+            <span class="nav-name">AHMAD SHAPAN</span>
+        </div>
+        <a href="mailto:ahmed-shaaban@puiux.org" class="nav-contact">
+            تواصل معي
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <section>
+        <div class="container">
+            <div class="animate-fade-up">
+                <span class="tag">تقرير الأداء الشهري</span>
+            </div>
+
+            <h1 class="animate-fade-up">
+                شهر <span class="gold-gradient-text">مارس 2026</span>
+            </h1>
+
+            <p class="intro-text animate-fade-up">
+                تقرير شامل يوضح المهام المنجزة من جميع الأقسام خلال شهر مارس 2026
+            </p>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section>
+        <div class="container">
+
+            <!-- Content WordPress Report -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h2>تقرير الأداء الأسبوعي</h2>
+                    <div class="employee-badge">content-wordpress</div>
+                </div>
+                <h3>اسم الموظف: احمد الكاشف</h3>
+                <p class="intro-text">التاريخ: 3/2026</p>
+
+                <div class="day-section">
+                    <div class="day-title">1/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">صهوة الخير- باك</div>
+                            <div class="arabic-text">تنفيذ صفحة الهوم وصفحة سنجل الخدمات +رفع الموقع على الدومين التجريبي+اضافة بلاجن صفحة تسجيل الدخول.</div>
+                            <div class="task-links">
+                                <a href="https://beta.puiux.org/sahwa/uniqe" target="_blank" class="project-link">لينك الموقع لوكال</a>
+                            </div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">فيجين-حتوى</div>
+                            <div class="arabic-text">التعديل على شركاء النجاح بإضافة اللوجوهات المرسلة من العميل.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">نحت الأصول-باك</div>
+                            <div class="arabic-text">حذف لوجو بايوكس من الموقع في الفوتر حذف اسم بايوكس من سكشن الخريطة داخل الموقع.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">مسفر-باك</div>
+                            <div class="arabic-text">طريقة للتعديل على فورم النيوز ليتر لإرسال نتيجتين واحدة لصاحب الموقع والثانية للمستخدم اللي سجل الفورم.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">2/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">جمعية الدعوى- محتوى</div>
+                            <div class="arabic-text">إضافة رقم واتس اب للموقع</div>
+                            <div class="task-links">
+                                <a href="https://sullaee.com/" target="_blank" class="project-link">لينك الموقع</a>
+                            </div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">فيجين</div>
+                            <div class="arabic-text">التعديل على نص الملاحظة داخل صفحات الأبواب+ تصحيح أخطاء ظهرت في كونسل</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">منظومة المباني</div>
+                            <div class="arabic-text">تنفيذ التعديلات المطلوبة من قسم التصميم على الصفحات الجديدة المقترحة+ إنشاء بلاجن جديد لتنفيذ ويدجيتس وبوست تايب جديد+ تنفيذ الويدجيتس الارشيف والسنجل ومن نحن.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">3/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">منظومة المباني-محتوى</div>
+                            <div class="arabic-text">رفع التعديلات على الدومين التجريبي+إضافة محتوى صفحة من نحن وبوست تايب المنتجات وفقا لمحتوى صفحة من نحن وبوست تايب المنتجات وفقا لمحتوى العميل +تحسين أخطاء تبديل اللغة</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">مسفر العاطفي- باك</div>
+                            <div class="arabic-text">تحسين أداء الموقع تثبيت مقالتي كلمة المؤسس وعن الشريك المؤسس في صفحة المقالات بالعربية والانجليزية+ التعديل على عنوان الرسالة +إضافة رسالة ترحيبية في النشرة الإخبارية.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">مدونه مسفر-باك</div>
+                            <div class="arabic-text">إزالة بلاجن وصفحات الترجمة من الموقع إعادة أزرار المشاركة لصفحة المقال السنجل+ إتاحة التحكم في النشرة الإخبارية أحدهما لبريد صاحب الموقع بتسجيل نشرة إخبارية جديدة والثاني للإيميل الخاص بالمستخدم حال تسجيله في النشرة برسالة ترحيبية.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">ايفينتا</div>
+                            <div class="arabic-text">مراجعة التصميم الرسومي المعتمد والتعديلات المرسلة لتحسين seo فيما بعد</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">ايفينتا</div>
+                            <div class="arabic-text">اتضح أن التعديلات المطلوبة من أجل تحسين محركات البحث لم يتم تنفيذ أي شيء منها +التأكيد على طلبات تحسين محركات البحث في تصميم الموقع.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">4/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">ايفينتا</div>
+                            <div class="arabic-text">تحليل محتوى المنافسين في الكلمات المفتاحية المرسلة من قبل العميل+تحليل وتفريغ الكلمات المفتاحية +دراسة محتوى الموقع القديم+ إجراء بحث موسع في جوجل باستخدام الكلمات المفتاحية+وضع خطة لتوزيع الكلمات المفتاحية +الاجتماع مع العميل لأكثر من ساعة في مناقشة محتوى الموقع.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">موقع مسفر</div>
+                            <div class="arabic-text">محاولة جديدة في تحسين تجربة المستخدم وأداء الموقع .</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">فيجين</div>
+                            <div class="arabic-text">إنشاء صفحة للمدونة وللمقال السنجل.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">صهوة الخير</div>
+                            <div class="arabic-text">تحسين أداء الموقع +ضبط مسارات الصور.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">5/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">صهوة الخير</div>
+                            <div class="arabic-text">ضبط محتوى العميل وفقا لملف البروفايل المرسل.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">فيجين</div>
+                            <div class="arabic-text">مراجعة الصفحة الارشيف والسنجل واضافة تحكمات في العناصر الاستاتيك زي تاب كل المنشورات عشان تغيير اللغة+ إضافة رانك ماث للموقع ربط CTA السنجل تواصل معنا .</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">منظومة المباني</div>
+                            <div class="arabic-text">إضافة محتوى شهادات الأيزو المرسلة من العميل لصفحة من نحن بالعربية والانجليزية+حل تعارضات للملفات.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">مدونه مسفر</div>
+                            <div class="arabic-text">التعديل على آلية عرض التاريخ في سكشن آخر المقالات في الهوم بيدج.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Front-end Report -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h2>تقرير الأداء الأسبوعي</h2>
+                    <div class="employee-badge">front-end</div>
+                </div>
+                <h3>اسم الموظف: عبدالرحمن السعيد</h3>
+                <p class="intro-text">التاريخ: 3/2026</p>
+
+                <div class="day-section">
+                    <div class="day-title">1/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">صهوة الخير</div>
+                            <div class="arabic-text">تعديلات صهوة الخير تعديلات بسيطة ومحاولة انيميشن رسم صوره الهيرو+ تشغيل شمعه التوحد+ مجتمع الصحه تعديلات جديدة في الموقع +تم ازاله اللودنج الى بيروح يمين وشمال ف مسفر المدونة +وإلغاء تأثير الأبيض وأسود في فيجن الابواب.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">2/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">فيجن</div>
+                            <div class="arabic-text">تعديلات ل فيجن مبعوته ع التذكره + حليت مشكله الجميعه كانت مشكلة في السيرفر بيحذف ملفات من البيلد بعد محاولات رفعت ملف ملف والموقع اشتغل. + ضفت ايفون سوشيال ل موقع الاستشارات + بدأت في إيفنتا.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">3/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">ايفنتا</div>
+                            <div class="arabic-text">استكمال العمل على موقع ايفنتا.</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">4/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">ايفنتا</div>
+                            <div class="arabic-text">تم الانتهاء من الصفحه الرئيسيه + عمل صفحه المقالات في موقع فيجن</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="day-section">
+                    <div class="day-title">5/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">ايفنتا</div>
+                            <div class="arabic-text">عملت ريسبونسف الصفحه الرئيسيه + صفحة الخدمات + المعرض + المقالات.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">صهوة الخير</div>
+                            <div class="arabic-text">عمل تعديل مطلوب في صهوة الخير.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sales Report -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h2>تقرير الأداء الأسبوعي</h2>
+                    <div class="employee-badge">sales</div>
+                </div>
+                <h3>اسم الموظف: ندى ياسر</h3>
+                <p class="intro-text">التاريخ: 3/2026</p>
+
+                <div class="day-section">
+                    <div class="day-title">1/3/2026 الي يوم 5/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">متابعة العمل اليومي</div>
+                            <div class="arabic-text">متابعة تذاكر العملاء+عملت عرض تطبيق المطعم والتعديل عليه أكثر من مرة بناء على طلب العميل+اجتماع الناصر و تعديل عرضهم بخصم إضافي+ العمل على عرض عميل جديد للخدمات الميدانية +تحديث الفواتير والحسابات للحوالات الجديدة+استلام ثلاثة عملاء جدد+متابعة يومية مع عملاء مستهدفين+متابعة الايميل والرد عليه حضور اجتماعات (إيفنتا - ايفنتا 2 - فيجن ).</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">التواصل الهاتفي</div>
+                            <div class="arabic-text">التحدث يومياً مع عملاء من 10 الي 15 عميل هاتفياً.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- UI UX Report -->
+            <div class="report-card">
+                <div class="report-header">
+                    <h2>تقرير الأداء الأسبوعي</h2>
+                    <div class="employee-badge">ui ux</div>
+                </div>
+                <h3>اسم الموظف: ندى أشرف</h3>
+                <p class="intro-text">التاريخ: 3/2026</p>
+
+                <div class="day-section">
+                    <div class="day-title">من يوم 1/3/2026 الي يوم 5/3/2026</div>
+                    <ul class="task-list">
+                        <li class="task-item">
+                            <div class="task-title">ايفنتا</div>
+                            <div class="arabic-text">العمل على ايفنتا تصميم الهوم وتصميم الصفحات الخاصة بها.</div>
+                        </li>
+                        <li class="task-item">
+                            <div class="task-title">تطبيق فيوتشر سكاي</div>
+                            <div class="arabic-text">وتصميم تطبيق فيوتشر سكاي من حيث الهوم والصفحات.</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="footer-title">شكراً للقراءة</h2>
+            <p class="footer-text">
+                تقرير شهري يوضح التقدم والإنجازات في جميع الأقسام خلال شهر مارس 2026
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ahmad-el-kashif-4858933b0/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/201021855103" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="copyright">
+                2026 AHMAD SHAPAN • تقرير شهر مارس
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
